@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import { useState } from "react";
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 import { GrView } from "react-icons/gr";
+// dad
 
 const TestRide = () => {
   const booktestride = useSelector((st) => st.testrides.data);
@@ -23,9 +24,9 @@ const TestRide = () => {
   };
 
   const resetFilter = () => {
-    setStartDate(""); // Clear the start date
-    setEndDate(""); // Clear the end date
-    setFilteredData([]); // Clear the filtered data
+    setStartDate(""); 
+    setEndDate(""); 
+    setFilteredData([]); 
   };
 
   return (

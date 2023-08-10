@@ -1,0 +1,47 @@
+//if we want that only filter total-range,speed,and charging time then this code
+  
+  {features.map((e, i) => {
+            const { value, name } = e;
+            if (
+              name === "Total-Range" ||
+              name === "Speed" ||
+              name === "Charging Time"
+            ) {
+              return (
+                <div key={i}>
+                  <div className="specdetail">
+                    <h1 style={{ fontWeight: 900 }}>{value}</h1>
+                    <p>{name}</p>
+                  </div>
+                </div>
+              );
+            }
+          })}
+
+
+
+
+          // and if we want to filter all except these three then  
+          
+          {features.map((e, i) => {
+              const { value, name, icon } = e;
+
+              if (
+                name !== "Total-Range" &&
+                name !== "Speed" &&
+                name !== "Charging Time"
+              ) {
+                return (
+                  <>
+                    {
+                      <div className="spec" key={i}>
+                        <h2>-{name}-</h2>
+                        <p>{value}</p>
+                      </div>
+                    }
+                  </>
+                );
+              }
+
+              return null; // Skip the specified features
+            })}
